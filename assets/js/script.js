@@ -11,9 +11,14 @@ function pokeTypeRetrieve() {
   })
   .then(function (data){
     console.log(data.pokemon);
-    for (let i = 0; i < data.pokemon.length; i++) {
-      console.log(data.pokemon[i].pokemon.name);
-      console.log(data.pokemon[i].pokemon.url);
+    let pokeNamesType = data.pokemon
+    for (let i = 0; i < pokeNamesType.length; i++) {
+      console.log(i);
+      let pokeNames = pokeNamesType[i].pokemon.name;
+      let pokeUrls = pokeNamesType[i].pokemon.url;
+      console.log(pokeNames);
+      console.log(pokeUrls);
+
     }
   }) 
 }
