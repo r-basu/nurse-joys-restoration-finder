@@ -30,6 +30,12 @@ function getPokeType() {
       pokeContainer.append(pokeUrl);
 
     }
+    return data.pokemon[i]
+  .fetch(data.pokemon[i].pokemon.url)
+    .then(response => response.json())
+    .then(otherData => {
+      console.log(otherData)
+    }) 
   }) 
 }
 getPokeType();
