@@ -1,3 +1,6 @@
+console.log("JS is linked");
+
+
 let pokeContainer = document.getElementById('pokemon');
 
 //TODO
