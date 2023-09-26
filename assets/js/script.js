@@ -34,13 +34,5 @@ function getPokeType() {
           })
       }
     })
-
-
-  // .fetch(data.pokemon[i].pokemon.url)
-  //   .then(response => response.json())
-  //   .then(otherData => {
-  //     console.log(otherData)
-  //   }) 
-  // }) 
 }
 getPokeType();
