@@ -1,40 +1,23 @@
-console.log("JS is linked");
-
-
-let pokeContainer = document.getElementById('pokemon');
-
-//TODO
-// Loop over all Types in API
-let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
-
 function getPokeType() {
-
+  //TODO
+  // pokeTypeUrl is generated from event listener click on Types images.
+  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
   fetch(pokeTypeUrl)
     .then(response => response.json())
     .then(function (data) {
       console.log(data.pokemon);
       let pokeNamesType = data.pokemon
-
       for (let i = 0; i < pokeNamesType.length; i++) {
+        let pokeContainer = document.getElementById('dark_select');
         console.log(i);
         console.log(pokeNamesType[i].pokemon.name);
-        console.log(pokeNamesType[i].pokemon.url);
 
-        let pokeNames = document.createElement('h3');
-        let pokeUrl = document.createElement('p');
+        let pokeNames = document.createElement('option');
 
-        pokeNames.textContent = pokeNamesType[i].pokemon.name
-        pokeUrl.textContent = pokeNamesType[i].pokemon.url
-
-        pokeNames.setAttribute('class', "has-text-centered")
+        pokeNames.textContent = pokeNamesType[i].pokemon.name;
+        pokeNames.setAttribute("value", i);
 
         pokeContainer.append(pokeNames);
-        pokeContainer.append(pokeUrl);
-        fetch(pokeNamesType[i].pokemon.url)
-          .then(response => response.json())
-          .then(otherData => {
-            console.log(otherData)
-          })
       }
     })
 }
