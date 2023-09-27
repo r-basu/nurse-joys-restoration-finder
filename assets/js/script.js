@@ -3,6 +3,14 @@ console.log("JS is linked");
 
 let pokeContainer = document.getElementById('pokemon');
 
+let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
+
+var checkBoxPoison = document.getElementById(`Poison`)
+
+var button = document.getElementById(`button`)
+
+var text = document.getElementById(`text`)
+
 //TODO
 // Loop over all Types in API
 let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
@@ -47,3 +55,21 @@ function getPokeType() {
   // }) 
 }
 getPokeType();
+
+fetch(pokeBerryUrl)
+.then(response => response.json())
+.then(function (data) {
+
+checkBoxPoison.addEventListener ('click', function() {
+  if (checkBoxPoison.checked == true) {
+    localStorage.setItem("poison", "Nurse Joy recommends a " + data.results[0].name + " berry!")
+  } else {
+    return;
+  }
+  });
+});
+
+button.addEventListener ('click', function() {
+    var x = localStorage.getItem("poison")
+    text.textContent = x;
+});
