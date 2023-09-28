@@ -1,11 +1,8 @@
 let pokeContainer = document.getElementById('pokemon');
 let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
 
-// var checkBoxPoison = document.getElementById(`Poison`)
-// var button = document.getElementById(`button`)
-// var text = document.getElementById(`text`)
-
 function getPokeType() {
+
   let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
   fetch(pokeTypeUrl)
     .then(response => response.json())
@@ -30,25 +27,8 @@ getPokeType();
 
 function getPokemon() {
   let pokeDropdown = document.getElementById("dark_select");
-  let pokeSelect = pokeDropdown.value;
-  console.log(pokeSelect);
+  let pokeSelectDrop = pokeDropdown.value;
+  let pokeUrl = `https://pokeapi.co/api/v2/type/${pokeSelectDrop}`
+  console.log(pokeUrl)
 }
-getPokemon();
-
-// fetch(pokeBerryUrl)
-// .then(response => response.json())
-// .then(function (data) {
-
-// checkBoxPoison.addEventListener ('click', function() {
-//   if (checkBoxPoison.checked == true) {
-//     localStorage.setItem("poison", "Nurse Joy recommends a " + data.results[0].name + " berry!")
-//   } else {
-//     return;
-//   }
-//   });
-// });
-
-// button.addEventListener ('click', function() {
-//     var x = localStorage.getItem("poison")
-//     text.textContent = x;
-// });
+getPokemon()
