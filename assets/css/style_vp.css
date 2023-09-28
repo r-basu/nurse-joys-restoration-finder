@@ -1,6 +1,6 @@
 html, body, pre, code, kbd, samp {
     font-family: "Press Start 2P";
-    background-color: bisque;
+    background-color: grey;
   }
 
 .imgCenter{
@@ -10,9 +10,14 @@ html, body, pre, code, kbd, samp {
   width: 35%;
 }
 
-table{
-    margin-left: auto;
-    margin-right: auto;
+tr p{
+  text-align: center;
+}
+
+
+table.tAlign{
+    margin-left: auto!important;
+    margin-right: auto!important ;
 }
 
 td img{
