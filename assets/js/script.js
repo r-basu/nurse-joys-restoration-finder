@@ -28,7 +28,8 @@ getPokeType();
 
 function getPokemon() {
   let pokeDropdown = document.getElementById("dark_select");
-  let pokeSelect = pokeDropdown.value;
-  console.log(pokeSelect);
+  let pokeSelectDrop = pokeDropdown.value;
+  let pokeUrl = `https://pokeapi.co/api/v2/type/${pokeSelectDrop}`
+  console.log(pokeUrl)
 }
 getPokemon();

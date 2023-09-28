@@ -1,31 +1,36 @@
-html, body, pre, code, kbd, samp {
-    font-family: "Press Start 2P";
-    background-color: grey;
-  }
+html,
+body,
+pre,
+code,
+kbd,
+samp {
+  font-family: "Press Start 2P";
+  background-color: grey;
+}
 
-.imgCenter{
+.imgCenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 35%;
 }
 
-tr p{
+tr p {
   text-align: center;
 }
 
 
-table.tAlign{
-    margin-left: auto!important;
-    margin-right: auto!important ;
+table.tAlign {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-td img{
-    width: 120px;
-    height: 120px;
+td img {
+  width: 120px;
+  height: 120px;
 }
 
-.wrapper{
-    display: flex;
-    flex-flow: row wrap;
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
 }
