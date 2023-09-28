@@ -1,17 +1,11 @@
 let pokeContainer = document.getElementById('pokemon');
 let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
 
-var checkBoxPoison = document.getElementById(`Poison`)
-var button = document.getElementById(`button`)
-var text = document.getElementById(`text`)
-
-//TODO
-// Loop over all Types in API
-let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
+// var checkBoxPoison = document.getElementById(`Poison`)
+// var button = document.getElementById(`button`)
+// var text = document.getElementById(`text`)
 
 function getPokeType() {
-  //TODO
-  // pokeTypeUrl is generated from event listener click on Types images.
   let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
   fetch(pokeTypeUrl)
     .then(response => response.json())
@@ -26,7 +20,7 @@ function getPokeType() {
         let pokeNames = document.createElement('option');
 
         pokeNames.textContent = pokeNamesType[i].pokemon.name;
-        pokeNames.setAttribute("value", i);
+        pokeNames.setAttribute("value", pokeNamesType[i].pokemon.name);
 
         pokeContainer.append(pokeNames);
       }
@@ -34,20 +28,27 @@ function getPokeType() {
 }
 getPokeType();
 
-fetch(pokeBerryUrl)
-.then(response => response.json())
-.then(function (data) {
+function getPokemon() {
+  let pokeDropdown = document.getElementById("dark_select");
+  let pokeSelect = pokeDropdown.value;
+  console.log(pokeSelect);
+}
+getPokemon();
 
-checkBoxPoison.addEventListener ('click', function() {
-  if (checkBoxPoison.checked == true) {
-    localStorage.setItem("poison", "Nurse Joy recommends a " + data.results[0].name + " berry!")
-  } else {
-    return;
-  }
-  });
-});
+// fetch(pokeBerryUrl)
+// .then(response => response.json())
+// .then(function (data) {
 
-button.addEventListener ('click', function() {
-    var x = localStorage.getItem("poison")
-    text.textContent = x;
-});
+// checkBoxPoison.addEventListener ('click', function() {
+//   if (checkBoxPoison.checked == true) {
+//     localStorage.setItem("poison", "Nurse Joy recommends a " + data.results[0].name + " berry!")
+//   } else {
+//     return;
+//   }
+//   });
+// });
+
+// button.addEventListener ('click', function() {
+//     var x = localStorage.getItem("poison")
+//     text.textContent = x;
+// });
