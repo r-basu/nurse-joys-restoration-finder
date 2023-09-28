@@ -4,15 +4,18 @@ let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
 var checkBoxPoison = document.getElementById(`Poison`)
 var button = document.getElementById(`button`)
 var text = document.getElementById(`text`)
+var pokemonType = localStorage.pokemonType;
+
+// console.log("pokeTYpe : " + poketype);
 
 //TODO
 // Loop over all Types in API
-let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
+let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokemonType}`
 
 function getPokeType() {
   //TODO
   // pokeTypeUrl is generated from event listener click on Types images.
-  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
+  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokemonType}`
   fetch(pokeTypeUrl)
     .then(response => response.json())
     .then(function (data) {
