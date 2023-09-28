@@ -1,9 +1,10 @@
 let pokeContainer = document.getElementById('pokemon');
 let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
 
-function getPokeType() {
+var pokemonType = localStorage.pokemonType;
 
-  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/1`
+function getPokeType() {
+  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokemonType}`
   fetch(pokeTypeUrl)
     .then(response => response.json())
     .then(function (data) {
@@ -31,4 +32,4 @@ function getPokemon() {
   let pokeUrl = `https://pokeapi.co/api/v2/type/${pokeSelectDrop}`
   console.log(pokeUrl)
 }
-getPokemon()
+getPokemon();
