@@ -1,8 +1,11 @@
-let pokeContainer = document.getElementById('pokemon');
-let pokemonType = localStorage.pokemonType;
+let pokeDropdown = document.getElementById("dark_select");
+
+let pokeType = localStorage.pokemonType;
+let pokeSelectDrop;
+let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokeType}`
+
 
 function getPokeType() {
-  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokemonType}`
   fetch(pokeTypeUrl)
     .then(response => response.json())
     .then(function (data) {
@@ -20,15 +23,17 @@ function getPokeType() {
 getPokeType();
 
 function getPokemon() {
-  let pokeDropdown = document.getElementById("dark_select");
-  let pokeSelectDrop = pokeDropdown.value;
+  pokeSelectDrop = pokeDropdown.value;
   let pokeUrl = `https://pokeapi.co/api/v2/pokemon/${pokeSelectDrop}`
   fetch(pokeUrl)
     .then(response => response.json())
     .then(function (data) {
-      let pokeContainer = document.getElementById("pokeSelect");
+      let pokeContainer = document.getElementById('pokeSelect');
       let pokeData = document.createElement('p')
       console.log(data.name);
+
+      pokeData.textContent = data.name
+      console.log(pokeData);
+      pokeContainer.append(pokeData);
     })
 }
-getPokemon();
