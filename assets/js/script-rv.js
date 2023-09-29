@@ -32,16 +32,15 @@ fetch(pokeBerryUrl)
 
     var status = ["poison", "paralysis", "burned", "asleep", "frozen", "confused"]
 
+localStorage.removeItem(status);
+
     checkBoxPoison.addEventListener('click', function () {
       if (checkBoxPoison.checked == true) {
         localStorage.setItem(status[0], berries[0] + " berry for poison")
-
       } else {
         localStorage.removeItem(status[0])
       }
     });
-
-
 
     checkBoxParalyz.addEventListener('click', function () {
       if (checkBoxParalyz.checked == true) {
