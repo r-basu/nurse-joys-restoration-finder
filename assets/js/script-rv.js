@@ -32,7 +32,9 @@ fetch(pokeBerryUrl)
 
     var status = ["poison", "paralysis", "burned", "asleep", "frozen", "confused"]
 
-localStorage.removeItem(status);
+    for (let i = 0; i < status.length; i++) {
+      localStorage.removeItem(status[i]);
+    }
 
     checkBoxPoison.addEventListener('click', function () {
       if (checkBoxPoison.checked == true) {
