@@ -2,46 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nurse Joy's Restoration Finder</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    <link href="./assets/css/style.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nurse Joy's Restoration Finder</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+  <link href="./assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-    <section class="section">
-        <div style="background-color:#212529; padding: 1rem 1.2rem 1rem 1rem;width:calc(100% + 8px)">
-            <label for="dark_select" style="color:#fff">Filtered Pokemon Selection</label>
-            <div class="nes-select is-dark">
-                <select required id="dark_select">
-                    <option value="" disabled selected hidden>Select your pokemon...</option>
-                </select>
-            </div>
-        </div>
+  <section class="section">
+    <div style="background-color:#212529; padding: 1rem 1.2rem 1rem 1rem;width:calc(100% + 8px)">
+      <label for="dark_select" style="color:#fff">Filtered Pokemon Selection</label>
+      <div class="nes-select is-dark">
+        <select required id="dark_select">
+          <option value="" disabled selected hidden>Select your pokemon...</option>
+        </select>
+      </div>
+    </div>
 
     <section class="berry">
-        <label>
-            <input type="checkbox" id="Poison" class="nes-checkbox"/>
-            <span>Poisoned</span>
-          </label>
-        
-          <label>
-            <input type="checkbox" id="Paralyzed" class="nes-checkbox"/>
-            <span>Paralyzed</span>
-          </label>
-        
-          <label>
-            <input type="checkbox" id="Burned" class="nes-checkbox"/>
-            <span>Burned</span>
-          </label>
-        
-          <label>
-            <input type="checkbox" id="Asleep" class="nes-checkbox"/>
-            <span>Asleep</span>
-          </label>
+      <label>
+        <input type="checkbox" id="Poison" class="nes-checkbox" />
+        <span>Poisoned</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="Paralyzed" class="nes-checkbox" />
+        <span>Paralyzed</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="Burned" class="nes-checkbox" />
+        <span>Burned</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="Asleep" class="nes-checkbox" />
+        <span>Asleep</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="Frozen" class="nes-checkbox" />
+        <span>Frozen</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="Confused" class="nes-checkbox" />
+        <span>Confused</span>
+      </label>
+
+      <button id="button">Submit</button>
+
+      <p id="text"></p>
+    </section>
+
+    <section id="pokeSelect">
 
           <label>
             <input type="checkbox" id="Frozen" class="nes-checkbox"/>
@@ -64,7 +81,7 @@
       defer
     ></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/script-rv.js"></script> 
+    <script src="./assets/js/script-rv.js"></script>
 </body>
 
 </html>

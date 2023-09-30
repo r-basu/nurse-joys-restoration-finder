@@ -1,35 +1,15 @@
-let pokeContainer = document.getElementById('pokemon');
-let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
-
-var checkBoxPoison = document.getElementById(`Poison`)
-var button = document.getElementById(`button`)
-var text = document.getElementById(`text`)
-var pokemonType = localStorage.pokemonType;
-
-// console.log("pokeTYpe : " + poketype);
-
-//TODO
-// Loop over all Types in API
-let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokemonType}`
-
 function getPokeType() {
-  //TODO
-  // pokeTypeUrl is generated from event listener click on Types images.
-  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokemonType}`
+  let pokeType = localStorage.pokemonType;
+  let pokeTypeUrl = `https://pokeapi.co/api/v2/type/${pokeType}`
   fetch(pokeTypeUrl)
     .then(response => response.json())
     .then(function (data) {
-      console.log(data.pokemon);
-      let pokeNamesType = data.pokemon
-      for (let i = 0; i < pokeNamesType.length; i++) {
+      for (let i = 0; i < data.pokemon.length; i++) {
         let pokeContainer = document.getElementById('dark_select');
-        console.log(i);
-        console.log(pokeNamesType[i].pokemon.name);
-
         let pokeNames = document.createElement('option');
 
-        pokeNames.textContent = pokeNamesType[i].pokemon.name;
-        pokeNames.setAttribute("value", i);
+        pokeNames.textContent = data.pokemon[i].pokemon.name;
+        pokeNames.setAttribute("value", data.pokemon[i].pokemon.name);
 
         pokeContainer.append(pokeNames);
       }
@@ -37,20 +17,17 @@ function getPokeType() {
 }
 getPokeType();
 
-fetch(pokeBerryUrl)
-.then(response => response.json())
-.then(function (data) {
+function getPokemon() {
+  let pokeDropdown = document.getElementById("dark_select");
+  let pokeSelectDrop = pokeDropdown.value;
+  let pokeUrl = `https://pokeapi.co/api/v2/pokemon/${pokeSelectDrop}`
+  fetch(pokeUrl)
+    .then(response => response.json())
+    .then(function (data) {
+      let pokeContainer = document.getElementById('pokeSelect');
+      let pokeData = document.createElement('p')
 
-checkBoxPoison.addEventListener ('click', function() {
-  if (checkBoxPoison.checked == true) {
-    localStorage.setItem("poison", "Nurse Joy recommends a " + data.results[0].name + " berry!")
-  } else {
-    return;
-  }
-  });
-});
-
-button.addEventListener ('click', function() {
-    var x = localStorage.getItem("poison")
-    text.textContent = x;
-});
+      pokeData.textContent = data.name
+      pokeContainer.append(pokeData);
+    })
+}
