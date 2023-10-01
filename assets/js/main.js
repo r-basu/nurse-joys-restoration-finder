@@ -68,5 +68,5 @@ function getPokemon() {
 }
 
 button1.addEventListener('click', function () {
-    getPokemon();
+  getPokemon();
 });
