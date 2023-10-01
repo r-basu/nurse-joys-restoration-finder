@@ -27,6 +27,8 @@ function getPokemon() {
     .then(response => response.json())
     .then(function (data) {
       let pokeContainer = document.getElementById('pokeSelect');
+
+      let pokeDataSprite = document.createElement('img')
       let pokeDataName = document.createElement('p')
       let pokeDataHp = document.createElement('p')
       let pokeDataAttack = document.createElement('p')
@@ -34,9 +36,12 @@ function getPokemon() {
       let pokeDataSpecialAttack = document.createElement('p')
       let pokeDataSpecialDefense = document.createElement('p')
       let pokeDataSpeed = document.createElement('p')
-      let pokeDataSprite = document.createElement('img')
+      let pokeFirstGame = document.createElement('p')
 
       console.log(data)
+
+      pokeDataSprite.setAttribute('src', data.sprites.front_default)
+      // pokeDataSprite.setAttribute('class', 'is-flex is-justify-content-center')
 
       pokeDataName.textContent = data.name
       pokeDataName.setAttribute("class", "is-size-2 has-text-centered is-capitalized")
@@ -57,14 +62,16 @@ function getPokemon() {
       pokeDataSpecialDefense.setAttribute("class", "has-text-centered is-capitalized");
 
       pokeDataSpeed.textContent = data.stats[5].stat.name + " " + data.stats[5].base_stat
-      pokeDataSpeed.setAttribute("class", "has-text-centered is-capitalized");
+      pokeDataSpeed.setAttribute('class', 'has-text-centered is-capitalized');
 
-      pokeDataSprite.setAttribute('src', data.sprites.front_default)
-      pokeDataSprite.setAttribute('class', 'is-justify-content-center')
+      pokeFirstGame.textContent = "First Pokemon game appearance: " + data.game_indices[0].version.name
+      pokeFirstGame.setAttribute("class", "has-text-centered is-capitalized");
+
 
 
       pokeContainer.append(pokeDataSprite);
       pokeContainer.append(pokeDataName);
+      pokeContainer.append(pokeFirstGame);
       pokeContainer.append(pokeDataHp);
       pokeContainer.append(pokeDataAttack);
       pokeContainer.append(pokeDataDefense);
@@ -75,5 +82,5 @@ function getPokemon() {
 }
 
 button1.addEventListener('click', function () {
-  getPokemon();
+    getPokemon();
 });
