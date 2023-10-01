@@ -30,15 +30,7 @@ td img {
   height: 120px;
 }
 
-<<<<<<< HEAD
-.wrapper{
-    display: flex;
-    flex-flow: row wrap;
-}
-
-=======
 .wrapper {
   display: flex;
   flex-flow: row wrap;
 }
->>>>>>> dev
