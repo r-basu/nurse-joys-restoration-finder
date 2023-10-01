@@ -2,7 +2,7 @@ var pokemonTypeEl = document.querySelector(`.tAlign`);
 var randomClick = document.querySelector(`.randomClick`);
 var pokemonType;
 
-randomClick.addEventListener("click",function(event){
+randomClick.addEventListener("click", function (event) {
   window.location.assign(
     "./result.html"
   );

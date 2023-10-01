@@ -12,9 +12,10 @@
 </head>
 
 <body>
-  <section class="section">
+  <section class="main">
+
     <div style="background-color:#212529; padding: 1rem 1.2rem 1rem 1rem;width:calc(100% + 8px)">
-      <label for="dark_select" style="color:#fff">Filtered Pokemon Selection</label>
+      <label for="dark_select" style="color:#fff">Filtered Type Pokemon Selection</label>
       <div class="nes-select is-dark">
         <select required id="dark_select">
           <option value="" disabled selected hidden>Select your pokemon...</option>
@@ -54,34 +55,16 @@
       </label>
 
       <button id="button">Submit</button>
-
-      <p id="text"></p>
     </section>
 
     <section id="pokeSelect">
-
-          <label>
-            <input type="checkbox" id="Frozen" class="nes-checkbox"/>
-            <span>Frozen</span>
-          </label>
-        
-          <label>
-            <input type="checkbox" id="Confused" class="nes-checkbox"/>
-            <span>Confused</span>
-          </label>
-        
-          <button id="button">Submit</button>
-        
-          <p id="text"></p>
-
-          <div id="map"></div>
+      <p id="text"></p>
+      <div id="map"></div>
     </section>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4&callback=initMap&libraries=places&v=weekly"
-      defer
-    ></script>
+
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/script-rv.js"></script>
+  </section>
 </body>
 
 </html>

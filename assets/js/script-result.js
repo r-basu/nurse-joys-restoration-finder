@@ -6,9 +6,9 @@ var custLocation;
 var custAddress = document.querySelector(`#custAddress`);
 
 
-function getCustomerAddress(){
-    var autoFill;
-        autoFill =  new google.maps.places.Autocomplete(custAddress,{
+
+function getCustomerAddress() {
+    var autoFill = new google.maps.places.Autocomplete(custAddress, {
         types: ['geocode']
     });
 
