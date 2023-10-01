@@ -40,35 +40,21 @@ function getPokemon() {
 
       console.log(data)
 
-      pokeDataSprite.setAttribute('src', data.sprites.front_default)
-      // pokeDataSprite.setAttribute('class', 'is-flex is-justify-content-center')
-
       pokeDataName.textContent = data.name
-      pokeDataName.setAttribute("class", "is-size-2 has-text-centered is-capitalized")
+      pokeDataName.setAttribute("class", "is-size-2")
 
       pokeDataHp.textContent = data.stats[0].stat.name + " " + data.stats[0].base_stat
-      pokeDataHp.setAttribute("class", "has-text-centered is-uppercase");
+      pokeDataHp.setAttribute("class", "is-uppercase");
 
+      pokeDataSprite.setAttribute('src', data.sprites.front_default)
       pokeDataAttack.textContent = data.stats[1].stat.name + " " + data.stats[1].base_stat
-      pokeDataAttack.setAttribute("class", "has-text-centered is-capitalized");
-
       pokeDataDefense.textContent = data.stats[2].stat.name + " " + data.stats[2].base_stat
-      pokeDataDefense.setAttribute("class", "has-text-centered is-capitalized");
-
       pokeDataSpecialAttack.textContent = data.stats[3].stat.name + " " + data.stats[3].base_stat
-      pokeDataSpecialAttack.setAttribute("class", "has-text-centered is-capitalized");
-
       pokeDataSpecialDefense.textContent = data.stats[4].stat.name + " " + data.stats[4].base_stat
-      pokeDataSpecialDefense.setAttribute("class", "has-text-centered is-capitalized");
-
       pokeDataSpeed.textContent = data.stats[5].stat.name + " " + data.stats[5].base_stat
-      pokeDataSpeed.setAttribute('class', 'has-text-centered is-capitalized');
+      pokeFirstGame.textContent = "first pokemon game appearance: " + data.game_indices[0].version.name
 
-      pokeFirstGame.textContent = "First Pokemon game appearance: " + data.game_indices[0].version.name
-      pokeFirstGame.setAttribute("class", "has-text-centered is-capitalized");
-
-
-
+      // pokeContainer.innerHTML = ""
       pokeContainer.append(pokeDataSprite);
       pokeContainer.append(pokeDataName);
       pokeContainer.append(pokeFirstGame);
