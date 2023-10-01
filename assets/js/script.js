@@ -54,7 +54,7 @@ function getPokemon() {
       pokeDataSpeed.textContent = data.stats[5].stat.name + " " + data.stats[5].base_stat
       pokeFirstGame.textContent = "first pokemon game appearance: " + data.game_indices[0].version.name
 
-      // pokeContainer.innerHTML = ""
+      pokeContainer.innerHTML = ""
       pokeContainer.append(pokeDataSprite);
       pokeContainer.append(pokeDataName);
       pokeContainer.append(pokeFirstGame);
