@@ -34,19 +34,33 @@ function getPokemon() {
       let pokeDataSpecialAttack = document.createElement('p')
       let pokeDataSpecialDefense = document.createElement('p')
       let pokeDataSpeed = document.createElement('p')
-
       let pokeDataSprite = document.createElement('img')
 
       console.log(data)
 
       pokeDataName.textContent = data.name
-      pokeDataHp.textContent = data.stats[0].stat.name + " " + data.stats[0].base_stat 
+      pokeDataName.setAttribute("class", "is-size-2 has-text-centered is-capitalized")
+
+      pokeDataHp.textContent = data.stats[0].stat.name + " " + data.stats[0].base_stat
+      pokeDataHp.setAttribute("class", "has-text-centered is-uppercase");
+
       pokeDataAttack.textContent = data.stats[1].stat.name + " " + data.stats[1].base_stat
+      pokeDataAttack.setAttribute("class", "has-text-centered is-capitalized");
+
       pokeDataDefense.textContent = data.stats[2].stat.name + " " + data.stats[2].base_stat
+      pokeDataDefense.setAttribute("class", "has-text-centered is-capitalized");
+
       pokeDataSpecialAttack.textContent = data.stats[3].stat.name + " " + data.stats[3].base_stat
+      pokeDataSpecialAttack.setAttribute("class", "has-text-centered is-capitalized");
+
       pokeDataSpecialDefense.textContent = data.stats[4].stat.name + " " + data.stats[4].base_stat
+      pokeDataSpecialDefense.setAttribute("class", "has-text-centered is-capitalized");
+
       pokeDataSpeed.textContent = data.stats[5].stat.name + " " + data.stats[5].base_stat
+      pokeDataSpeed.setAttribute("class", "has-text-centered is-capitalized");
+
       pokeDataSprite.setAttribute('src', data.sprites.front_default)
+      pokeDataSprite.setAttribute('class', 'is-justify-content-center')
 
 
       pokeContainer.append(pokeDataSprite);
