@@ -1,7 +1,3 @@
-var timeSelected = document.querySelector(`#timeSelected`);
-console.log(timeSelected);
-
-
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
 
