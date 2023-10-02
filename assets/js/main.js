@@ -19,111 +19,94 @@ function getPokeType() {
       }
     })
 
+    let typeIcon = document.createElement(`img`)
     switch (pokeType) {
       case "dark":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Dark.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "bug":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Bug.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "dragon":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Dragon.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "electric":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Electric.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "fairy":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Fairy.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "fighting":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Fighting.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "fire":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Fire.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "flying":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Flying.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "ghost":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Ghost.png`)
         pokeIcon.append(typeIcon)
         break;  
 
       case "grass":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Grass.png`)
         pokeIcon.append(typeIcon)
         break;
       
       case "ground":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Ground.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "ice":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Ice.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "normal":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Normal.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "poison":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Poison.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "psychic":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Psychic.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "rock":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Rock.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "steel":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Steel.png`)
         pokeIcon.append(typeIcon)
         break;
 
       case "water":
-        let typeIcon = document.createElement(`img`)
         typeIcon.setAttribute(`src`, `assets/icons/Water.png`)
         pokeIcon.append(typeIcon)
         break;
