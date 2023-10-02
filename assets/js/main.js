@@ -1,5 +1,6 @@
 let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
 let button = document.getElementById(`button`)
+var pokeIcon = document.getElementById(`iconPoke`)
 
 function getPokeType() {
   let pokeType = localStorage.pokemonType;
@@ -17,6 +18,118 @@ function getPokeType() {
         pokeContainer.append(pokeNames);
       }
     })
+
+    switch (pokeType) {
+      case "dark":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Dark.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "bug":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Bug.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "dragon":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Dragon.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "electric":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Electric.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "fairy":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Fairy.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "fighting":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Fighting.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "fire":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Fire.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "flying":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Flying.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "ghost":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Ghost.png`)
+        pokeIcon.append(typeIcon)
+        break;  
+
+      case "grass":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Grass.png`)
+        pokeIcon.append(typeIcon)
+        break;
+      
+      case "ground":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Ground.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "ice":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Ice.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "normal":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Normal.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "poison":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Poison.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "psychic":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Psychic.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "rock":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Rock.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "steel":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Steel.png`)
+        pokeIcon.append(typeIcon)
+        break;
+
+      case "water":
+        var typeIcon = document.createElement(`img`)
+        typeIcon.setAttribute(`src`, `assets/icons/Water.png`)
+        pokeIcon.append(typeIcon)
+        break;
+    
+    }
+   
 }
 getPokeType();
 
