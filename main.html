@@ -9,15 +9,16 @@
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
   <link href="./assets/css/style.css" rel="stylesheet" />
+  <link href="./assets/css/main.css" rel="stylesheet" />
 </head>
 
 <body>
   <section class="main">
 
-    <div style="background-color:#212529; padding: 1rem 1.2rem 1rem 1rem;width:calc(100% + 8px)">
-      <label for="dark_select" style="color:#fff">Filtered Type Pokemon Selection</label>
+    <div style="background-color:#212529; padding: 1rem 1.2rem 1rem 1rem;width:calc(100% + 8px)" class="has-text-centered">
+      <label for="dark_select" id = "iconPoke" style="color:#fff"></label>
       <div class="nes-select is-dark">
-        <select required id="dark_select">
+        <select required id="dark_select" class="has-text-centered is-capitalized">
           <option value="" disabled selected hidden>Select your pokemon...</option>
         </select>
       </div>
@@ -57,13 +58,16 @@
       <button id="button">Submit</button>
     </section>
 
-    <section id="pokeSelect">
+    <section id="pokeSelect" class="has-text-centered is-capitalized">
+    </section>
+    <section>
       <p id="text"></p>
-      <div id="map"></div>
     </section>
 
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/script-rv.js"></script>
+    <div id="map" class="has-text-centered">
+    </div>
+
+    <script src="./assets/js/main.js"></script>
   </section>
 </body>
 
