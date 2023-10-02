@@ -8,6 +8,13 @@ samp {
   background-color: grey;
 }
 
+.navbar,
+.navbar-menu {
+  color:white;
+  background-color:black;
+}
+
+
 .imgCenter {
   display: block;
   margin-left: auto;
