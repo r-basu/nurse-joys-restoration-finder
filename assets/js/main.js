@@ -188,7 +188,7 @@ button.addEventListener('click', function () {
   // Change poke to localstorage saved pokemon name and retrieve
   let poke = "test"
   map.innerHTML = ""
-  map.innerHTML = `<p>Nurse Joy recommends to take ${poke} to the nearest clinic or hospital if you do not have the berries on hand!</p><br><iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=Vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
+  map.innerHTML = `<p>Nurse Joy recommends to take ${poke} to the nearest clinic or hospital if you do not have the berries on hand!</p>`
 });
 
 
