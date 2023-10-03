@@ -239,7 +239,7 @@ function getPokemon() {
       localStorage.pokemonName = data.name
       nurseContainer.innerHTML = `
       <div class="nes-container is-dark">
-      <p><span class="nes-text is-error">We recommend to take </span><span class="nes-text is-primary is-capitalized">${localStorage.pokemonName}</span><span class="nes-text is-error"> to the nearest clinic or hospital if you do not have the berries on hand!</span></p>
+      <p>We recommend to take </span><span class="nes-text is-primary is-capitalized">${localStorage.pokemonName}</span> to the nearest clinic or hospital if you do not have the berries on hand!</p>
       </div>`
     })
 }
