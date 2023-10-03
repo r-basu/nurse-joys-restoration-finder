@@ -133,7 +133,6 @@ function getPokemon() {
       let pokeDataSpecialAttack = document.createElement('p')
       let pokeDataSpecialDefense = document.createElement('p')
       let pokeDataSpeed = document.createElement('p')
-      let pokeFirstGame = document.createElement('p')
 
       console.log(data)
 
@@ -149,12 +148,10 @@ function getPokemon() {
       pokeDataSpecialAttack.textContent = data.stats[3].stat.name + " " + data.stats[3].base_stat
       pokeDataSpecialDefense.textContent = data.stats[4].stat.name + " " + data.stats[4].base_stat
       pokeDataSpeed.textContent = data.stats[5].stat.name + " " + data.stats[5].base_stat
-      pokeFirstGame.textContent = "first pokemon game appearance: " + data.game_indices[0].version.name
 
       pokeContainer.innerHTML = ""
       pokeContainer.append(pokeDataSprite);
       pokeContainer.append(pokeDataName);
-      pokeContainer.append(pokeFirstGame);
       pokeContainer.append(pokeDataHp);
       pokeContainer.append(pokeDataAttack);
       pokeContainer.append(pokeDataDefense);
