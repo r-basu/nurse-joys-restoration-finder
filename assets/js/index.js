@@ -1,4 +1,4 @@
-let pokemonTypeEl = document.querySelector(`.tAlign`);
+let pokemonTypeEl = document.getElementById(`icon`);
 let pokemonType;
 
 
