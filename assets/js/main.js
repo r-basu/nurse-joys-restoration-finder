@@ -166,25 +166,40 @@ function getPokemon() {
 }
 
 button.addEventListener('click', function () {
-  getPokemon();
-  let text = document.getElementById(`text`)
-  let statuses = [];
-  statuses[0] = localStorage.getItem("poison")
-  statuses[1] = localStorage.getItem("paralysis")
-  statuses[2] = localStorage.getItem("burned")
-  statuses[3] = localStorage.getItem("asleep")
-  statuses[4] = localStorage.getItem("frozen")
-  statuses[5] = localStorage.getItem("confused")
+  let checkBoxPoison = document.getElementById(`Poison`)
+  let checkBoxParalyz = document.getElementById(`Paralyzed`)
+  let checkBoxBurned = document.getElementById(`Burned`)
+  let checkBoxAsleep = document.getElementById(`Asleep`)
+  let checkBoxFrozen = document.getElementById(`Frozen`)
+  let checkBoxConfused = document.getElementById(`Confused`)
 
-  let newStatuses = [];
+  if (checkBoxPoison.checked == true || checkBoxAsleep.checked==true || checkBoxBurned.checked==true||checkBoxConfused.checked==true || checkBoxParalyz.checked==true || checkBoxFrozen.checked==true) {
+    let text = document.getElementById(`text`)
+    
+    getPokemon();
 
-  for (let i = 0; i < statuses.length; i++) {
-    if (statuses[i]) {
-      newStatuses.push(statuses[i]);
+    let statuses = [];
+    statuses[0] = localStorage.getItem("poison")
+    statuses[1] = localStorage.getItem("paralysis")
+    statuses[2] = localStorage.getItem("burned")
+    statuses[3] = localStorage.getItem("asleep")
+    statuses[4] = localStorage.getItem("frozen")
+    statuses[5] = localStorage.getItem("confused")
+  
+    let newStatuses = [];
+  
+    for (let i = 0; i < statuses.length; i++) {
+      if (statuses[i]) {
+        newStatuses.push(statuses[i]);
+      }
     }
-    text.textContent = "Nurse Joy recommends a " + newStatuses + "!";
-  }
 
+    text.innerHTML = "Nurse Joy recommends a " + newStatuses + "!";
+  
+  } else {
+    text.innerHTML = "Please select at least one status condition!";
+    map.innerHTML = ""
+  }
 
   let button = document.getElementById('submit');
   // Change poke to localstorage saved pokemon name and retrieve
