@@ -45,6 +45,25 @@
     <i class="nes-ash"></i>
     <i class="nes-pokeball"></i>
     <i class="nes-squirtle"></i>
+
+    <section>
+      <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark').showModal();">
+        Show Booked Appointments
+      </button>
+      <dialog class="nes-dialog is-dark" id="dialog-dark">
+        <form method="dialog">
+          <p class="title">Booked Appointments</p>
+          <p>Name: Don Joe</p>
+          <p>Pokemon: Pikachu</p>
+          <p>Time: 3:14p</p>
+          <p>Date: 3/14/14</p>
+          <menu class="dialog-menu">
+            <button class="nes-btn is-primary">Close</button>
+            <button class="nes-btn is-error">Clear Appointment</button>
+          </menu>
+        </form>
+      </dialog>
+    </section>
   </header>
 
   <main class="nes-container is-dark with-title">
