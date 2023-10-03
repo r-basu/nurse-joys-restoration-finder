@@ -3,6 +3,23 @@ var timeSelected = document.querySelector(`#timeSelected`);
 var dateSelected = document.querySelector(`#dateSelected`);
 var submitBtn = document.querySelector(`#submitBtn`);
 
+//Vinit's code
+
+var raw = "{\n    \"country\": \"nigeria\"\n}";
+
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://countriesnow.space/api/v0.1/countries/cities", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+//
+
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
 
