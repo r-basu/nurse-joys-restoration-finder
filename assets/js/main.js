@@ -158,6 +158,10 @@ function getPokemon() {
       pokeContainer.append(pokeDataSpecialAttack);
       pokeContainer.append(pokeDataSpecialDefense);
       pokeContainer.append(pokeDataSpeed);
+
+      let map = document.getElementById('map');
+      localStorage.pokemonName = data.name
+      map.innerHTML = `<p>Nurse Joy recommends to take ${data.name} to the nearest clinic or hospital if you do not have the berries on hand!</p>`
     })
 }
 
@@ -181,11 +185,17 @@ button.addEventListener('click', function () {
     text.textContent = "Nurse Joy recommends a " + newStatuses + "!";
   }
 
-  let map = document.getElementById('map');
+
+  let button = document.getElementById('submit');
   // Change poke to localstorage saved pokemon name and retrieve
-  let poke = "test"
-  map.innerHTML = ""
-  map.innerHTML = `<p>Nurse Joy recommends to take ${poke} to the nearest clinic or hospital if you do not have the berries on hand!</p>`
+  button.innerHTML = `<button type="button" class="nes-btn is-primary">Book your appointment now!</button>`
+
+  button.addEventListener("click", function (event) {
+    window.location.assign(
+      "./booking.html"
+    );
+  });
+
 });
 
 
