@@ -1,19 +1,7 @@
-let map = document.getElementById('map');
+var map = document.getElementById('map');
 var timeSelected = document.querySelector(`#timeSelected`);
 var dateSelected = document.querySelector(`#dateSelected`);
 var submitBtn = document.querySelector(`#submitBtn`);
-
-
-submitBtn.addEventListener("click", function(event){
-    console.log(timeSelected.value);
-    console.log(dateSelected.value);
-    localStorage.timeSelected = timeSelected.value;
-    localStorage.dateSelected = dateSelected.value;
-console.log(timeSelected);
-
-map.innerHTML = ""
-map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=Vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
-
 
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,3 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+submitBtn.addEventListener("click", function(event){
+    console.log(timeSelected.value);
+    console.log(dateSelected.value);
+    localStorage.timeSelected = timeSelected.value;
+    localStorage.dateSelected = dateSelected.value;
+console.log(timeSelected);
+})
+
+map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=Vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
+
