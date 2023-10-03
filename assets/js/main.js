@@ -239,7 +239,7 @@ function getPokemon() {
       localStorage.pokemonName = data.name
       nurseContainer.innerHTML = `
       <div class="nes-container is-dark">
-      <p>We recommend to take ${localStorage.pokemonName} to the nearest clinic or hospital if you do not have the berries on hand!</p>
+      <p><span class="nes-text is-error">We recommend to take </span><span class="nes-text is-primary is-capitalized">${localStorage.pokemonName}</span><span class="nes-text is-error"> to the nearest clinic or hospital if you do not have the berries on hand!</span></p>
       </div>`
     })
 }
@@ -277,14 +277,14 @@ button.addEventListener('click', function () {
     nurseContainer.innerHTML = `
     <div class="nes-container is-dark with-title">
     <p class="title">Nurse Joy's Recommendation</p>
-    <p>Nurse Joy recommends a ${newStatuses}!</p>
+    <p><span class="is-capitalized nes-text is-success">Nurse Joy recommends a ${newStatuses}!</span></p>
     </div>`;
 
   } else {
     nurseContainer.innerHTML = `
     <div class="nes-container is-dark with-title">
     <p class="title">Nurse Joy's Recommendation</p>
-    <p>Please select at least one status condition!</p>
+    <p><span class="nes-text is-error">Please select at least one status condition!</span></p>
     </div>`;
   }
 
