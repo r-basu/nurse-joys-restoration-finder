@@ -19,100 +19,100 @@ function getPokeType() {
       }
     })
 
-    let typeIcon = document.createElement(`img`)
-    switch (pokeType) {
-      case "dark":
-        typeIcon.setAttribute(`src`, `assets/icons/Dark.png`)
-        pokeIcon.append(typeIcon)
-        break;
+  let typeIcon = document.createElement(`img`)
+  switch (pokeType) {
+    case "dark":
+      typeIcon.setAttribute(`src`, `assets/icons/Dark.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "bug":
-        typeIcon.setAttribute(`src`, `assets/icons/Bug.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "bug":
+      typeIcon.setAttribute(`src`, `assets/icons/Bug.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "dragon":
-        typeIcon.setAttribute(`src`, `assets/icons/Dragon.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "dragon":
+      typeIcon.setAttribute(`src`, `assets/icons/Dragon.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "electric":
-        typeIcon.setAttribute(`src`, `assets/icons/Electric.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "electric":
+      typeIcon.setAttribute(`src`, `assets/icons/Electric.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "fairy":
-        typeIcon.setAttribute(`src`, `assets/icons/Fairy.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "fairy":
+      typeIcon.setAttribute(`src`, `assets/icons/Fairy.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "fighting":
-        typeIcon.setAttribute(`src`, `assets/icons/Fighting.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "fighting":
+      typeIcon.setAttribute(`src`, `assets/icons/Fighting.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "fire":
-        typeIcon.setAttribute(`src`, `assets/icons/Fire.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "fire":
+      typeIcon.setAttribute(`src`, `assets/icons/Fire.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "flying":
-        typeIcon.setAttribute(`src`, `assets/icons/Flying.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "flying":
+      typeIcon.setAttribute(`src`, `assets/icons/Flying.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "ghost":
-        typeIcon.setAttribute(`src`, `assets/icons/Ghost.png`)
-        pokeIcon.append(typeIcon)
-        break;  
+    case "ghost":
+      typeIcon.setAttribute(`src`, `assets/icons/Ghost.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "grass":
-        typeIcon.setAttribute(`src`, `assets/icons/Grass.png`)
-        pokeIcon.append(typeIcon)
-        break;
-      
-      case "ground":
-        typeIcon.setAttribute(`src`, `assets/icons/Ground.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "grass":
+      typeIcon.setAttribute(`src`, `assets/icons/Grass.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "ice":
-        typeIcon.setAttribute(`src`, `assets/icons/Ice.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "ground":
+      typeIcon.setAttribute(`src`, `assets/icons/Ground.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "normal":
-        typeIcon.setAttribute(`src`, `assets/icons/Normal.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "ice":
+      typeIcon.setAttribute(`src`, `assets/icons/Ice.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "poison":
-        typeIcon.setAttribute(`src`, `assets/icons/Poison.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "normal":
+      typeIcon.setAttribute(`src`, `assets/icons/Normal.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "psychic":
-        typeIcon.setAttribute(`src`, `assets/icons/Psychic.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "poison":
+      typeIcon.setAttribute(`src`, `assets/icons/Poison.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "rock":
-        typeIcon.setAttribute(`src`, `assets/icons/Rock.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "psychic":
+      typeIcon.setAttribute(`src`, `assets/icons/Psychic.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "steel":
-        typeIcon.setAttribute(`src`, `assets/icons/Steel.png`)
-        pokeIcon.append(typeIcon)
-        break;
+    case "rock":
+      typeIcon.setAttribute(`src`, `assets/icons/Rock.png`)
+      pokeIcon.append(typeIcon)
+      break;
 
-      case "water":
-        typeIcon.setAttribute(`src`, `assets/icons/Water.png`)
-        pokeIcon.append(typeIcon)
-        break;
-    
-    }
-   
+    case "steel":
+      typeIcon.setAttribute(`src`, `assets/icons/Steel.png`)
+      pokeIcon.append(typeIcon)
+      break;
+
+    case "water":
+      typeIcon.setAttribute(`src`, `assets/icons/Water.png`)
+      pokeIcon.append(typeIcon)
+      break;
+
+  }
+
 }
 getPokeType();
 
@@ -133,7 +133,6 @@ function getPokemon() {
       let pokeDataSpecialAttack = document.createElement('p')
       let pokeDataSpecialDefense = document.createElement('p')
       let pokeDataSpeed = document.createElement('p')
-      let pokeFirstGame = document.createElement('p')
 
       console.log(data)
 
@@ -149,12 +148,10 @@ function getPokemon() {
       pokeDataSpecialAttack.textContent = data.stats[3].stat.name + " " + data.stats[3].base_stat
       pokeDataSpecialDefense.textContent = data.stats[4].stat.name + " " + data.stats[4].base_stat
       pokeDataSpeed.textContent = data.stats[5].stat.name + " " + data.stats[5].base_stat
-      pokeFirstGame.textContent = "first pokemon game appearance: " + data.game_indices[0].version.name
 
       pokeContainer.innerHTML = ""
       pokeContainer.append(pokeDataSprite);
       pokeContainer.append(pokeDataName);
-      pokeContainer.append(pokeFirstGame);
       pokeContainer.append(pokeDataHp);
       pokeContainer.append(pokeDataAttack);
       pokeContainer.append(pokeDataDefense);
@@ -188,7 +185,7 @@ button.addEventListener('click', function () {
   // Change poke to localstorage saved pokemon name and retrieve
   let poke = "test"
   map.innerHTML = ""
-  map.innerHTML = `<p>Nurse Joy recommends to take ${poke} to the nearest clinic or hospital if you do not have the berries on hand!</p><br><iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=Vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
+  map.innerHTML = `<p>Nurse Joy recommends to take ${poke} to the nearest clinic or hospital if you do not have the berries on hand!</p>`
 });
 
 
@@ -267,3 +264,26 @@ fetch(pokeBerryUrl)
     });
   });
 
+
+//Navbar
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach(el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});

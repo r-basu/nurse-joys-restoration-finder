@@ -9,3 +9,13 @@
   justify-content: center;
   align-items: center;
 } */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
