@@ -9,7 +9,11 @@ samp {
 }
 
 .navbar,
-.navbar-menu {
+.navbar-menu,
+.navbar-menu a {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   color: white;
-  background-color: black;
+  background-color: #272A2D;
 }
