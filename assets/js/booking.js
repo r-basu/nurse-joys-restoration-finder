@@ -4,19 +4,23 @@ var dateSelected = document.querySelector(`#dateSelected`);
 var submitBtn = document.querySelector(`#submitBtn`);
 var customerCity;
 var cityList = document.querySelector(`#dark_select`);
+var customerName = document.querySelector(`#customerName`);
+var customerEmail = document.querySelector(`#customerEmail`);
+
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log(timeSelected.value);
-  console.log(dateSelected.value);
+ 
+  localStorage.customerName = customerName.value;
+  localStorage.customerEmail = customerEmail.value;
   localStorage.timeSelected = timeSelected.value;
   localStorage.dateSelected = dateSelected.value;
-  console.log(timeSelected);
+ 
 
   var apptText = document.getElementById("appt")
 
   if (timeSelected.value.includes(":") && dateSelected.value.includes("-")) {
-    apptText.innerHTML = "Appointment Booked!"
+    apptText.innerHTML = `Your appointment has been Booked on ${localStorage.dateSelected} at ${localStorage.timeSelected}!`
   } else {
     apptText.innerHTML = "Please Select a Date and Time"
   }

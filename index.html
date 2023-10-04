@@ -60,19 +60,16 @@
 
     <section id = "bookAppt">
       <button type="button" class="nes-btn is-primary"
-        onclick="document.getElementById('dialog-dark-rounded').showModal();">
+        onclick="document.getElementById('dialog-dark-rounded').showModal();" id="show-appt">
         Show Booked Appointment
       </button>
       <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
-        <form method="dialog">
-          <p class="title">Booked Appointment</p>
-          <p>Name: Don Joe</p>
-          <p>Pokemon: Pikachu</p>
-          <p>Time: 3:14pm</p>
-          <p>Date: 3/14/14</p>
+        <form method="dialog" >
+          <section id="user-appt">
+          </section>
           <menu class="dialog-menu">
             <button class="nes-btn is-primary">Close</button>
-            <button class="nes-btn is-error">Clear Appointment</button>
+            <button class="nes-btn is-error" id="clear-appt">Clear Appointment</button>
           </menu>
         </form>
       </dialog>
@@ -124,7 +121,7 @@
               </td>
             </tr>
             <tr>
-              <td><img id="grass" src="./assets/icons/grass.png">
+              <td><img id="grass" src="./assets/icons/Grass.png">
                 <p id="grass">Grass</p>
               </td>
               <td><img id="ground" src="./assets/icons/Ground.png">
