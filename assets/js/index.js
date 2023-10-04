@@ -38,10 +38,10 @@ showAppt.addEventListener("click", function(){
   userAppt.innerHTML = ``
   userAppt.innerHTML = `
   <p class="title">Booked Appointment</p>
-  <p>Name: ${localStorage.customerCity}</p>
+  <p>Name: ${localStorage.trainerName}</p>
   <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
-  <p>Email: ${localStorage.customerCity}</p>
-  <p>City: ${localStorage.customerCity}</p>
+  <p>Email: ${localStorage.trainerEmail}</p>
+  <p>City: ${localStorage.trainerCity}</p>
   <p>Date: ${localStorage.dateSelected}</p>
   <p>Time: ${localStorage.timeSelected}</p>
   `
