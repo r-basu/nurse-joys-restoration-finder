@@ -1,5 +1,6 @@
 let pokemonTypeEl = document.getElementById(`icon`);
 let pokemonType;
+let userAppt = document.getElementById(`userAppt`)
 
 
 pokemonTypeEl.addEventListener("click", function (event) {
@@ -32,3 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+userAppt.innerHTML = `
+<p class="title">Booked Appointment</p>
+<p>Name: ${localStorage.customerCity}</p>
+<p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
+<p>Email: ${localStorage.customerCity}</p>
+<p>City: ${localStorage.customerCity}</p>
+<p>Date: ${localStorage.dateSelected}</p>
+<p>Time: ${localStorage.timeSelected}</p>
+  <menu class="dialog-menu">
+    <button class="nes-btn is-primary">Close</button>
+    <button class="nes-btn is-error">Clear Appointment</button>
+  </menu>
+`

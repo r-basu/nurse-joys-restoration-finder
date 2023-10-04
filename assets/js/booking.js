@@ -17,7 +17,7 @@ submitBtn.addEventListener("click", function (event) {
   
   var apptText = document.getElementById("appt")
 
-  if (timeSelected.value.includes(":")&&dateSelected.value.includes("-")) {
+  if (timeSelected.value.includes(":") && dateSelected.value.includes("-")) {
     apptText.innerHTML = "Appointment Booked!"
   } else {
     apptText.innerHTML = "Please Select a Date and Time"
@@ -53,28 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //code to push list of cities in canada to the drop down.
-function cityDisplay(){
+function cityDisplay() {
   fetch("https://countriesnow.space/api/v0.1/countries")
-  .then(response => response.json())
-  .then(function(result){
-    result.data[35].cities
-    for (let i = 0; i < result.data[35].cities.length; i++) {
-   
-      var cityName = document.createElement(`option`);
+    .then(response => response.json())
+    .then(function (result) {
+      result.data[35].cities
+      for (let i = 0; i < result.data[35].cities.length; i++) {
 
-      cityName.textContent = result.data[35].cities[i];
-      cityName.setAttribute("value",result.data[35].cities[i])
-      
-      // console.log(result.data[35].cities[i]);
-      cityList.append(cityName);
-      console.log(cityList.value);
-      // localStorage.customerCity = cityList.textContent;
-    }
-  }).catch(error => console.log('error', error));
+        var cityName = document.createElement(`option`);
+
+        cityName.textContent = result.data[35].cities[i];
+        cityName.setAttribute("value", result.data[35].cities[i])
+
+        // console.log(result.data[35].cities[i]);
+        cityList.append(cityName);
+        console.log(cityList.value);
+        // localStorage.customerCity = cityList.textContent;
+      }
+    }).catch(error => console.log('error', error));
 
   // console.log(customerCity);
 
-  cityList.addEventListener("change", function(event){
+  cityList.addEventListener("change", function (event) {
     console.log(cityList.value);
     customerCity = cityList.value;
     localStorage.customerCity = cityList.value;

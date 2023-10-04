@@ -10,7 +10,7 @@
   <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
   <link href="./assets/css/style.css" rel="stylesheet" />
   <link href="./assets/css/index.css" rel="stylesheet" />
-  <link rel="shortcut icon" type="image/png" href="./assets/icons/love-always-wins.png"/>
+  <link rel="shortcut icon" type="image/png" href="./assets/icons/love-always-wins.png" />
 
 </head>
 
@@ -47,16 +47,12 @@
     <i class="nes-squirtle"></i>
 
     <section>
-      <button type="button" class="nes-btn is-primary" onclick="document.getElementById('dialog-dark').showModal();">
-        Show Booked Appointments
+      <button type="button" class="nes-btn is-primary"
+        onclick="document.getElementById('dialog-dark-rounded').showModal();">
+        Show Booked Appointment
       </button>
-      <dialog class="nes-dialog is-dark" id="dialog-dark">
-        <form method="dialog">
-          <p class="title">Booked Appointments</p>
-          <p>Name: Don Joe</p>
-          <p>Pokemon: Pikachu</p>
-          <p>Time: 3:14pm</p>
-          <p>Date: 3/14/14</p>
+      <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+        <form method="dialog" id="userAppt">
           <menu class="dialog-menu">
             <button class="nes-btn is-primary">Close</button>
             <button class="nes-btn is-error">Clear Appointment</button>
@@ -67,12 +63,12 @@
   </header>
 
   <main class="nes-container is-dark with-title has-text-centered">
-      <img src="https://icon-library.com/images/icon-pokemon/icon-pokemon-25.jpg" 
-      width="400" alt="Pokemon" class="imgCenter"/>
-      <p class="nes-text is-error">Your Pokemon in urgent care and don't know the cure?!</p>
-      <p>Go through this form to find the nearest Pokemon center near you!</p>
-      <p>Nurse Joy will provide a personal tailored recommendation and appointment booking awaiting you.</p>
-      <p class="has-text-centered nes-text is-primary">Please select your Pokemons Type:</p>
+    <img src="https://icon-library.com/images/icon-pokemon/icon-pokemon-25.jpg" width="400" alt="Pokemon"
+      class="imgCenter" />
+    <p class="nes-text is-error">Your Pokemon in urgent care and don't know the cure?!</p>
+    <p>Go through this form to find the nearest Pokemon center near you!</p>
+    <p>Nurse Joy will provide a personal tailored recommendation and appointment booking awaiting you.</p>
+    <p class="has-text-centered nes-text is-primary">Please select your Pokemons Type:</p>
     <section class="pokemonType">
       <div class="nes-table-responsive">
         <table class="nes-table is-bordered is-centered is-dark tAlign">
