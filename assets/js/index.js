@@ -1,6 +1,7 @@
 let pokemonTypeEl = document.getElementById(`icon`);
-let pokemonType;
-
+let userAppt = document.getElementById(`user-appt`);
+let showAppt = document.getElementById(`show-appt`);
+let clearAppt = document.getElementById(`clear-appt`);
 
 pokemonTypeEl.addEventListener("click", function (event) {
   pokemonType = event.target.id;
@@ -9,6 +10,12 @@ pokemonTypeEl.addEventListener("click", function (event) {
     "./main.html"
   );
 });
+
+if(localStorage.trainerName===undefined){
+  document.querySelector(`.AptButton`).style.visibility = `hidden`;
+}else{
+  document.querySelector(`.AptButton`).style.visibility = `visible`;
+}
 
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,3 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+showAppt.addEventListener("click", function(){
+  userAppt.innerHTML = ``
+  userAppt.innerHTML = `
+  <p class="title">Booked Appointment</p>
+  <p>Name: ${localStorage.trainerName}</p>
+  <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
+  <p>Email: ${localStorage.trainerEmail}</p>
+  <p>City: ${localStorage.trainerCity}</p>
+  <p>Date: ${localStorage.dateSelected}</p>
+  <p>Time: ${localStorage.timeSelected}</p>
+  `
+})
+
+clearAppt.addEventListener("click", function () {
+  localStorage.clear();
+  userAppt.innerHTML = ``
+})

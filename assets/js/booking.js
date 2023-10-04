@@ -1,32 +1,35 @@
-var map = document.getElementById('map');
-var timeSelected = document.querySelector(`#timeSelected`);
-var dateSelected = document.querySelector(`#dateSelected`);
-var submitBtn = document.querySelector(`#submitBtn`);
-var customerCity;
-var cityList = document.querySelector(`#dark_select`);
+let map = document.getElementById('map');
+let timeSelected = document.querySelector(`#timeSelected`);
+let dateSelected = document.querySelector(`#dateSelected`);
+let submitBtn = document.querySelector(`#submitBtn`);
+let trainerCity;
+let cityList = document.querySelector(`#dark_select`);
+let trainerName = document.querySelector(`#trainerName`);
+let trainerEmail = document.querySelector(`#trainerEmail`);
+
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log(timeSelected.value);
-  console.log(dateSelected.value);
+ 
+  localStorage.trainerName = trainerName.value;
+  localStorage.trainerEmail = trainerEmail.value;
   localStorage.timeSelected = timeSelected.value;
   localStorage.dateSelected = dateSelected.value;
-  console.log(timeSelected);
-
-  var apptText = document.getElementById("appt")
+ 
+  let apptText = document.getElementById("appt")
 
   if (timeSelected.value.includes(":") && dateSelected.value.includes("-")) {
-    apptText.innerHTML = "Appointment Booked!"
+    apptText.innerHTML = `Your appointment has been Booked on ${localStorage.dateSelected} at ${localStorage.timeSelected}!`
   } else {
     apptText.innerHTML = "Please Select a Date and Time"
   }
-
-
-
 })
 
-// map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=Vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
-map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${customerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
+map.innerHTML = `
+<div class="nes-container is-dark">
+<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>
+</div>
+`
 
 
 //Navbar
@@ -61,25 +64,24 @@ function cityDisplay() {
       result.data[35].cities
       for (let i = 0; i < result.data[35].cities.length; i++) {
 
-        var cityName = document.createElement(`option`);
+        let cityName = document.createElement(`option`);
 
         cityName.textContent = result.data[35].cities[i];
         cityName.setAttribute("value", result.data[35].cities[i])
-
-        // console.log(result.data[35].cities[i]);
         cityList.append(cityName);
-        console.log(cityList.value);
-        // localStorage.customerCity = cityList.textContent;
       }
     }).catch(error => console.log('error', error));
 
-  // console.log(customerCity);
 
   cityList.addEventListener("change", function (event) {
     console.log(cityList.value);
-    customerCity = cityList.value;
-    localStorage.customerCity = cityList.value;
-    map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${customerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
+    trainerCity = cityList.value;
+    localStorage.trainerCity = cityList.value;
+    map.innerHTML = `
+    <div class="nes-container is-dark">
+    <iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>
+    </div>
+    `
   })
 }
 
