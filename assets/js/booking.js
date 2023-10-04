@@ -4,14 +4,16 @@ var dateSelected = document.querySelector(`#dateSelected`);
 var submitBtn = document.querySelector(`#submitBtn`);
 var customerCity;
 var cityList = document.querySelector(`#dark_select`);
+var customerName = document.querySelector(`#custName`);
+var customerEmail = document.querySelector(`#custEmail`); 
 
+//event when the user clicks submit
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log(timeSelected.value);
-  console.log(dateSelected.value);
   localStorage.timeSelected = timeSelected.value;
   localStorage.dateSelected = dateSelected.value;
-  console.log(timeSelected);
+  localStorage.customerName = customerName.value;
+  localStorage.customerEmail = customerEmail.value;
   
   var apptText = document.getElementById("appt")
 
@@ -20,12 +22,9 @@ submitBtn.addEventListener("click", function (event) {
   } else {
     apptText.innerHTML = "Please Select a Date and Time"
   }
-
   
-
 })
 
-// map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=Vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
 map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${customerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
 
 
@@ -82,6 +81,5 @@ function cityDisplay(){
     map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${customerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
   })
 }
-
 
 cityDisplay();
