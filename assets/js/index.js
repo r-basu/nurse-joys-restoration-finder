@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 userAppt.innerHTML = `
 <p class="title">Booked Appointment</p>
-<p>Name: ${localStorage.customerCity}</p>
+<p>Name: ${localStorage.customerName}</p>
 <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
-<p>Email: ${localStorage.customerCity}</p>
+<p>Email: ${localStorage.customerEmail}</p>
 <p>City: ${localStorage.customerCity}</p>
 <p>Date: ${localStorage.dateSelected}</p>
 <p>Time: ${localStorage.timeSelected}</p>
