@@ -42,8 +42,4 @@ userAppt.innerHTML = `
 <p>City: ${localStorage.customerCity}</p>
 <p>Date: ${localStorage.dateSelected}</p>
 <p>Time: ${localStorage.timeSelected}</p>
-  <menu class="dialog-menu">
-    <button class="nes-btn is-primary">Close</button>
-    <button class="nes-btn is-error">Clear Appointment</button>
-  </menu>
 `
