@@ -10,12 +10,15 @@ pokemonTypeEl.addEventListener("click", function (event) {
     "./main.html"
   );
 });
-
-if(localStorage.trainerName===undefined){
-  document.querySelector(`.AptButton`).style.visibility = `hidden`;
-}else{
-  document.querySelector(`.AptButton`).style.visibility = `visible`;
+function visibleAptButton(){
+  if(localStorage.trainerName===undefined){
+    document.querySelector(`.AptButton`).style.visibility = `hidden`;
+  }else{
+    document.querySelector(`.AptButton`).style.visibility = `visible`;
+  }
 }
+
+visibleAptButton();
 
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,7 +56,16 @@ showAppt.addEventListener("click", function(){
   `
 })
 
+function visibleAptButton(){
+  if(localStorage.trainerName===undefined){
+    document.querySelector(`.AptButton`).style.visibility = `hidden`;
+  }else{
+    document.querySelector(`.AptButton`).style.visibility = `visible`;
+  }
+}
+
 clearAppt.addEventListener("click", function () {
   localStorage.clear();
+  visibleAptButton();
   userAppt.innerHTML = ``
 })
