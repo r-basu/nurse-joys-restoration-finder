@@ -34,9 +34,10 @@ td img {
   flex-flow: row wrap;
 }
 
-#bookAppt {
+#topIcons{
   display: flex;
-  justify-content:center;
+  justify-content:space-between;
+  align-items:center;
 }
 
 #closeButton {

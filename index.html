@@ -42,9 +42,6 @@
       </div>
     </nav>
     <!-- Copyright Nintendo -->
-    <i class="nes-ash" id = "ash" onclick = "document.getElementById(`dialog`).showModal();"></i>
-    <i class="nes-pokeball"></i>
-    <i class="nes-squirtle"></i>
 
     <section>
       <dialog class="nes-dialog" id="dialog">
@@ -57,8 +54,15 @@
         </form>
       </dialog>
     </section>
-
-    <section id = "bookAppt">
+   
+    <section id = "topIcons">
+      <div>
+        <i class="nes-ash" id = "ash" onclick = "document.getElementById(`dialog`).showModal();"></i>
+        <i class="nes-pokeball"></i>
+        <i class="nes-squirtle"></i>
+      </div>
+      
+      <div>
       <button type="button" class="nes-btn is-primary AptButton"
         onclick="document.getElementById('dialog-dark-rounded').showModal();" id="show-appt">
         Show Booked Appointment
@@ -73,6 +77,7 @@
           </menu>
         </form>
       </dialog>
+     </div>
     </section>
   </header>
 
