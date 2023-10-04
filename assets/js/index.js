@@ -11,6 +11,12 @@ pokemonTypeEl.addEventListener("click", function (event) {
   );
 });
 
+if(localStorage.trainerName===undefined){
+  document.querySelector(`.AptButton`).style.visibility = `hidden`;
+}else{
+  document.querySelector(`.AptButton`).style.visibility = `visible`;
+}
+
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
 
