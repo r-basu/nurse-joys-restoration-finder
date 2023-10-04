@@ -1,7 +1,7 @@
 let pokemonTypeEl = document.getElementById(`icon`);
-let pokemonType;
-let userAppt = document.getElementById(`userAppt`)
-
+let userAppt = document.getElementById(`user-appt`);
+let showAppt = document.getElementById(`show-appt`);
+let clearAppt = document.getElementById(`clear-appt`);
 
 pokemonTypeEl.addEventListener("click", function (event) {
   pokemonType = event.target.id;
@@ -34,12 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-userAppt.innerHTML = `
-<p class="title">Booked Appointment</p>
-<p>Name: ${localStorage.customerName}</p>
-<p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
-<p>Email: ${localStorage.customerEmail}</p>
-<p>City: ${localStorage.customerCity}</p>
-<p>Date: ${localStorage.dateSelected}</p>
-<p>Time: ${localStorage.timeSelected}</p>
-`
+showAppt.addEventListener("click", function(){
+  userAppt.innerHTML = ``
+  userAppt.innerHTML = `
+  <p class="title">Booked Appointment</p>
+  <p>Name: ${localStorage.customerCity}</p>
+  <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
+  <p>Email: ${localStorage.customerCity}</p>
+  <p>City: ${localStorage.customerCity}</p>
+  <p>Date: ${localStorage.dateSelected}</p>
+  <p>Time: ${localStorage.timeSelected}</p>
+  `
+})
+
+clearAppt.addEventListener("click", function () {
+  localStorage.clear();
+  userAppt.innerHTML = ``
+})
