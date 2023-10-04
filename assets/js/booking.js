@@ -25,7 +25,11 @@ submitBtn.addEventListener("click", function (event) {
   }
 })
 
-map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
+map.innerHTML = `
+<div class="nes-container is-dark">
+<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>
+</div>
+`
 
 
 //Navbar
@@ -73,7 +77,11 @@ function cityDisplay() {
     console.log(cityList.value);
     trainerCity = cityList.value;
     localStorage.trainerCity = cityList.value;
-    map.innerHTML = `<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>`
+    map.innerHTML = `
+    <div class="nes-container is-dark">
+    <iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>
+    </div>
+    `
   })
 }
 
