@@ -35,8 +35,8 @@ The user can input their relevant information and be shown vet clinics near them
 ![About page detailing API's, skills and attributions used](./assets/images/about.png)
 
 ## Project Tracker
-https://github.com/users/r-basu/projects/1/views/1
-https://github.com/r-basu/nurse-joys-restoration-finder/issues?q=is%3Aissue+is%3Aclosed
+- [Project Tracker](https://github.com/users/r-basu/projects/1/views/1)
+- [Issues Tracker](https://github.com/r-basu/nurse-joys-restoration-finder/issues?q=is%3Aissue+is%3Aclosed)
 
 ## Developers
 
