@@ -56,7 +56,7 @@ submitBtn.addEventListener("click", function (event) {
   localStorage.timeSelected = timeSelected.value;
   localStorage.dateSelected = dateSelected.value;
 
-  let apptText = document.getElementById("appt")
+  let apptText = document.getElementById("appt");
 
   if (timeSelected.value.includes(":") && dateSelected.value.includes("-")) {
     apptText.innerHTML = `Your appointment has been Booked on ${localStorage.dateSelected} at ${localStorage.timeSelected}!`
