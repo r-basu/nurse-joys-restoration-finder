@@ -11,6 +11,28 @@ let showAppt = document.getElementById(`show-appt`);
 let goHome = document.getElementById(`go-home`);
 let clearAppt = document.getElementById(`clear-appt`);
 
+let locationEl = document.querySelector(`.location`)
+let locationYes = document.querySelector(`.locationYes`);
+let locationNo = document.querySelector(`.locationNo`);
+
+
+var gmapUrl;
+
+//asking the user if they want clinic near them or not
+locationEl.addEventListener(`click`,function(event){
+  if (locationYes.checked) {
+    let citySelect = document.querySelector(`#citySelect`);
+  gmapUrl = `https://www.google.com/maps/embed/v1/search?q=vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
+  cityList.style.visibility = `hidden`;
+  citySelect.style.visibility = `hidden`;
+} else if(locationNo.checked) {
+  gmapUrl = `https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
+  cityList.style.visibility = `visible`;
+  citySelect.style.visibility = `visible`;
+}
+})
+
+
 // Saved Bookings button visiblity, and button functions
 function visibleApptBtn() {
   if (localStorage.trainerName === undefined) {
@@ -75,7 +97,7 @@ map.innerHTML = `
   style='border:0' 
   loading='lazy' 
   allowfullscreen 
-  src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'>
+  src=${gmapUrl}>
 </iframe>
 </div>
 `
@@ -123,6 +145,7 @@ function cityDisplay() {
 
 
   cityList.addEventListener("change", function (event) {
+   
     console.log(cityList.value);
     trainerCity = cityList.value;
     localStorage.trainerCity = cityList.value;
@@ -133,8 +156,7 @@ function cityDisplay() {
       height='450' 
       style='border:0' 
       loading='lazy' 
-      allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'>
-    </iframe>
+      allowfullscreen src=${gmapUrl}>
     </div>
     `
   })
