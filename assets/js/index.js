@@ -10,18 +10,18 @@ pokemonTypeEl.addEventListener("click", function (event) {
     "./main.html"
   );
 });
-function visibleAptButton(){
+
+function visibleApptBtn(){
   if(localStorage.trainerName===undefined){
-    document.querySelector(`.AptButton`).style.visibility = `hidden`;
+    document.querySelector(`#show-appt`).style.visibility = `hidden`;
   }else{
-    document.querySelector(`.AptButton`).style.visibility = `visible`;
+    document.querySelector(`#show-appt`).style.visibility = `visible`;
   }
 }
 
-visibleAptButton();
+visibleApptBtn();
 
 showAppt.addEventListener("click", function(){
-  userAppt.innerHTML = ``
   userAppt.innerHTML = `
   <p class="title">Booked Appointment</p>
   <p>Name: ${localStorage.trainerName}</p>
@@ -35,8 +35,7 @@ showAppt.addEventListener("click", function(){
 
 clearAppt.addEventListener("click", function () {
   localStorage.clear();
-  visibleAptButton();
-  userAppt.innerHTML = ``
+  visibleApptBtn();
 })
 
 //Navbar
