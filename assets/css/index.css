@@ -33,12 +33,6 @@ td img {
   flex-flow: row wrap;
 }
 
-#topIcons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 #closeButton {
   margin-right: 40px;
 }

@@ -6,8 +6,48 @@ let trainerCity;
 let cityList = document.querySelector(`#dark_select`);
 let trainerName = document.querySelector(`#trainerName`);
 let trainerEmail = document.querySelector(`#trainerEmail`);
+let userAppt = document.getElementById(`user-appt`);
+let showAppt = document.getElementById(`show-appt`);
+let goHome = document.getElementById(`go-home`);
+let clearAppt = document.getElementById(`clear-appt`);
 
+// Saved Bookings button visiblity, and button functions
+function visibleApptBtn() {
+  if (localStorage.trainerName === undefined) {
+    showAppt.style.visibility = `hidden`;
+  } else {
+    showAppt.style.visibility = `visible`;
+  }
+}
 
+visibleApptBtn();
+
+goHome.addEventListener("click", function () {
+  window.location.assign(
+    "./index.html"
+  )
+})
+
+clearAppt.addEventListener("click", function () {
+  localStorage.clear();
+  window.location.assign(
+    "./index.html"
+  )
+})
+
+showAppt.addEventListener("click", function () {
+  userAppt.innerHTML = `
+  <p class="title">Booked Appointment</p>
+  <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
+  <p>Name: ${localStorage.trainerName}</p>
+  <p>Email: ${localStorage.trainerEmail}</p>
+  <p>City: ${localStorage.trainerCity}</p>
+  <p>Date: ${localStorage.dateSelected}</p>
+  <p>Time: ${localStorage.timeSelected}</p>
+  `
+})
+
+// Saving input values as local storage keys for appointment information
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -23,11 +63,20 @@ submitBtn.addEventListener("click", function (event) {
   } else {
     apptText.innerHTML = "Please Select a Date and Time"
   }
+
+  visibleApptBtn();
 })
 
 map.innerHTML = `
 <div class="nes-container is-dark">
-<iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>
+<iframe 
+  width='600' 
+  height='450' 
+  style='border:0' 
+  loading='lazy' 
+  allowfullscreen 
+  src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'>
+</iframe>
 </div>
 `
 
@@ -79,7 +128,13 @@ function cityDisplay() {
     localStorage.trainerCity = cityList.value;
     map.innerHTML = `
     <div class="nes-container is-dark">
-    <iframe width='600' height='450' style='border:0' loading='lazy' allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'></iframe>
+    <iframe 
+      width='600' 
+      height='450' 
+      style='border:0' 
+      loading='lazy' 
+      allowfullscreen src='https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4'>
+    </iframe>
     </div>
     `
   })

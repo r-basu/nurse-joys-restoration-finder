@@ -8,6 +8,12 @@ samp {
   background-color: bisque;
 }
 
+#topIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .navbar,
 .navbar-menu,
 .navbar-menu a {

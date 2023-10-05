@@ -39,12 +39,36 @@
         </div>
       </div>
     </nav>
-    <!-- Copyright Nintendo -->
-    <i class="nes-charmander"></i>
-    <i class="nes-ash"></i>
-    <i class="nes-bulbasaur"></i>
-    <noscript><span class="nes-text is-error has-text-centered">You need to enable JavaScript to run this
-        app.</span></noscript>
+    <section id="topIcons">
+      <div>
+        <!-- Copyright Nintendo -->
+        <i class="nes-ash" id="ash" onclick="document.getElementById(`dialog-manatee`).showModal();"></i>
+        <i class="nes-pokeball"></i>
+        <i class="nes-squirtle"></i>
+      </div>
+
+      <div>
+        <button type="button" class="nes-btn is-primary" id="show-appt"
+          onclick="document.getElementById('dialog-dark-rounded').showModal();">
+          Show Booked Appointment
+        </button>
+        <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+          <form method="dialog">
+            <section id="user-appt">
+            </section>
+            <menu class="dialog-menu">
+              <button class="nes-btn is-primary" id="go-home">Home</button>
+              <button class="nes-btn is-warning" id="change-appt">Change Date/Time</button>
+              <button class="nes-btn is-error" id="clear-appt">Clear Appointment</button>
+            </menu>
+          </form>
+        </dialog>
+      </div>
+    </section>
+    <noscript>
+      <span class="nes-text is-error has-text-centered">You need to enable JavaScript to run this
+        app.</span>
+    </noscript>
   </header>
 
 

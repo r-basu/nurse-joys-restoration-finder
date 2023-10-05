@@ -2,6 +2,7 @@ let pokemonTypeEl = document.getElementById(`icon`);
 let userAppt = document.getElementById(`user-appt`);
 let showAppt = document.getElementById(`show-appt`);
 let clearAppt = document.getElementById(`clear-appt`);
+let changeAppt = document.getElementById(`change-appt`);
 
 pokemonTypeEl.addEventListener("click", function (event) {
   pokemonType = event.target.id;
@@ -13,9 +14,9 @@ pokemonTypeEl.addEventListener("click", function (event) {
 
 function visibleApptBtn() {
   if (localStorage.trainerName === undefined) {
-    document.querySelector(`#show-appt`).style.visibility = `hidden`;
+    showAppt.style.visibility = `hidden`;
   } else {
-    document.querySelector(`#show-appt`).style.visibility = `visible`;
+    showAppt.style.visibility = `visible`;
   }
 }
 
@@ -24,8 +25,8 @@ visibleApptBtn();
 showAppt.addEventListener("click", function () {
   userAppt.innerHTML = `
   <p class="title">Booked Appointment</p>
-  <p>Name: ${localStorage.trainerName}</p>
   <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
+  <p>Name: ${localStorage.trainerName}</p>
   <p>Email: ${localStorage.trainerEmail}</p>
   <p>City: ${localStorage.trainerCity}</p>
   <p>Date: ${localStorage.dateSelected}</p>
@@ -36,6 +37,12 @@ showAppt.addEventListener("click", function () {
 clearAppt.addEventListener("click", function () {
   localStorage.clear();
   visibleApptBtn();
+})
+
+changeAppt.addEventListener("click", function () {
+  window.location.assign(
+    "./booking.html"
+  );
 })
 
 //Navbar
