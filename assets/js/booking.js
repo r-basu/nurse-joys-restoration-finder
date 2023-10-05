@@ -10,12 +10,12 @@ let trainerEmail = document.querySelector(`#trainerEmail`);
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
- 
+
   localStorage.trainerName = trainerName.value;
   localStorage.trainerEmail = trainerEmail.value;
   localStorage.timeSelected = timeSelected.value;
   localStorage.dateSelected = dateSelected.value;
- 
+
   let apptText = document.getElementById("appt")
 
   if (timeSelected.value.includes(":") && dateSelected.value.includes("-")) {

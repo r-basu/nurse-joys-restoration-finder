@@ -33,18 +33,18 @@ td img {
   flex-flow: row wrap;
 }
 
-#topIcons{
+#topIcons {
   display: flex;
-  justify-content:space-between;
-  align-items:center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #closeButton {
-  margin-right:40px;
+  margin-right: 40px;
 }
 
 #manateeContainer {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

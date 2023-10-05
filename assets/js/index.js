@@ -11,17 +11,17 @@ pokemonTypeEl.addEventListener("click", function (event) {
   );
 });
 
-function visibleApptBtn(){
-  if(localStorage.trainerName===undefined){
+function visibleApptBtn() {
+  if (localStorage.trainerName === undefined) {
     document.querySelector(`#show-appt`).style.visibility = `hidden`;
-  }else{
+  } else {
     document.querySelector(`#show-appt`).style.visibility = `visible`;
   }
 }
 
 visibleApptBtn();
 
-showAppt.addEventListener("click", function(){
+showAppt.addEventListener("click", function () {
   userAppt.innerHTML = `
   <p class="title">Booked Appointment</p>
   <p>Name: ${localStorage.trainerName}</p>
