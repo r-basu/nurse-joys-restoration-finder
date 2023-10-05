@@ -11,18 +11,26 @@ let showAppt = document.getElementById(`show-appt`);
 let goHome = document.getElementById(`go-home`);
 let clearAppt = document.getElementById(`clear-appt`);
 
+let locationEl = document.querySelector(`.location`)
+let locationYes = document.querySelector(`.locationYes`);
+let locationNo = document.querySelector(`.locationNo`);
 
-//added prompt for user location
-let text = "Do you want the vet clinics near you or do you want to select your city?";
+
 var gmapUrl;
-if (confirm(text) == true) {
-  let citySelect = document.querySelector(`#citySelect`);
+
+//asking the user if they want clinic near them or not
+locationEl.addEventListener(`click`,function(event){
+  if (locationYes.checked) {
+    let citySelect = document.querySelector(`#citySelect`);
   gmapUrl = `https://www.google.com/maps/embed/v1/search?q=vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
   cityList.style.visibility = `hidden`;
   citySelect.style.visibility = `hidden`;
-} else {
+} else if(locationNo.checked) {
   gmapUrl = `https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
+  cityList.style.visibility = `visible`;
+  citySelect.style.visibility = `visible`;
 }
+})
 
 
 // Saved Bookings button visiblity, and button functions
