@@ -2,6 +2,7 @@ let pokemonTypeEl = document.getElementById(`icon`);
 let userAppt = document.getElementById(`user-appt`);
 let showAppt = document.getElementById(`show-appt`);
 let clearAppt = document.getElementById(`clear-appt`);
+let changeAppt = document.getElementById(`change-appt`);
 
 pokemonTypeEl.addEventListener("click", function (event) {
   pokemonType = event.target.id;
@@ -11,11 +12,38 @@ pokemonTypeEl.addEventListener("click", function (event) {
   );
 });
 
-if(localStorage.trainerName===undefined){
-  document.querySelector(`.AptButton`).style.visibility = `hidden`;
-}else{
-  document.querySelector(`.AptButton`).style.visibility = `visible`;
+function visibleApptBtn() {
+  if (localStorage.trainerName === undefined) {
+    showAppt.style.visibility = `hidden`;
+  } else {
+    showAppt.style.visibility = `visible`;
+  }
 }
+
+visibleApptBtn();
+
+showAppt.addEventListener("click", function () {
+  userAppt.innerHTML = `
+  <p class="title">Booked Appointment</p>
+  <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
+  <p>Name: ${localStorage.trainerName}</p>
+  <p>Email: ${localStorage.trainerEmail}</p>
+  <p>City: ${localStorage.trainerCity}</p>
+  <p>Date: ${localStorage.dateSelected}</p>
+  <p>Time: ${localStorage.timeSelected}</p>
+  `
+})
+
+clearAppt.addEventListener("click", function () {
+  localStorage.clear();
+  visibleApptBtn();
+})
+
+changeAppt.addEventListener("click", function () {
+  window.location.assign(
+    "./booking.html"
+  );
+})
 
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
@@ -39,21 +67,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-showAppt.addEventListener("click", function(){
-  userAppt.innerHTML = ``
-  userAppt.innerHTML = `
-  <p class="title">Booked Appointment</p>
-  <p>Name: ${localStorage.trainerName}</p>
-  <p class="is-capitalized">Pokemon: ${localStorage.pokemonName}</p>
-  <p>Email: ${localStorage.trainerEmail}</p>
-  <p>City: ${localStorage.trainerCity}</p>
-  <p>Date: ${localStorage.dateSelected}</p>
-  <p>Time: ${localStorage.timeSelected}</p>
-  `
-})
-
-clearAppt.addEventListener("click", function () {
-  localStorage.clear();
-  userAppt.innerHTML = ``
-})

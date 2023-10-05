@@ -1,6 +1,9 @@
 let pokeBerryUrl = `https://pokeapi.co/api/v2/berry`
 let button = document.getElementById(`button`)
 let pokeIcon = document.getElementById(`iconPoke`)
+let pokeContainer = document.getElementById('pokeSelect');
+
+pokeContainer.style.visibility = `hidden`;
 
 // Fetching user selected pokemon type from localstorage
 function getPokeType() {
@@ -200,7 +203,6 @@ function getPokemon() {
     .then(response => response.json())
     .then(function (data) {
       let pokeContainer = document.getElementById('pokeSelect');
-
       let pokeDataSprite = document.createElement('img')
       let pokeDataName = document.createElement('p')
       let pokeDataHp = document.createElement('p')
@@ -210,7 +212,7 @@ function getPokemon() {
       let pokeDataSpecialDefense = document.createElement('p')
       let pokeDataSpeed = document.createElement('p')
 
-      console.log(data)
+      pokeContainer.style.visibility = `visible`;
 
       pokeDataName.textContent = data.name
       pokeDataName.setAttribute("class", "is-size-2")
@@ -239,7 +241,7 @@ function getPokemon() {
       localStorage.pokemonName = data.name
       nurseContainer.innerHTML = `
       <div class="nes-container is-dark">
-      <p>We recommend to take </span><span class="nes-text is-primary is-capitalized">${localStorage.pokemonName}</span> to the nearest clinic or hospital if you do not have the berries on hand!</p>
+      <p>Recommend to take </span><span class="nes-text is-primary is-capitalized">${localStorage.pokemonName}</span> to the nearest clinic or hospital if you do not have the berries on hand!</p>
       </div>`
     })
 }
