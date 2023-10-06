@@ -28,19 +28,11 @@ let locationNo = document.querySelector(`.locationNo`);
 
 var gmapUrl = `https://www.google.com/maps/embed/v1/search?q=vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
 
-//asking the user if they want clinic near them or not
-locationEl.addEventListener(`click`,function(event){
-  if (locationYes.checked) {
-    let citySelect = document.querySelector(`#citySelect`);
-  gmapUrl = `https://www.google.com/maps/embed/v1/search?q=vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
-  cityList.style.visibility = `hidden`;
-  citySelect.style.visibility = `hidden`;
-} else if(locationNo.checked) {
-  gmapUrl = `https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
-  cityList.style.visibility = `visible`;
-  citySelect.style.visibility = `visible`;
-}
-})
+// hiding the city selector
+
+cityList.style.visibility = `hidden`;
+citySelect.style.visibility = `hidden`;
+
 
 // Saved Bookings button visiblity, and button functions
 function visibleApptBtn() {
@@ -56,7 +48,7 @@ visibleApptBtn();
 goHome.addEventListener("click", function () {
   window.location.assign(
     "./index.html"
-  )
+    )
 })
 
 clearAppt.addEventListener("click", function () {
@@ -81,12 +73,12 @@ showAppt.addEventListener("click", function () {
 // Saving input values as local storage keys for appointment information
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-
+  
   localStorage.trainerName = trainerName.value;
   localStorage.trainerEmail = trainerEmail.value;
   localStorage.timeSelected = timeSelected.value;
   localStorage.dateSelected = dateSelected.value;
-
+  
   let apptText = document.getElementById("appt");
 
   if (timeSelected.value.includes(":") && dateSelected.value.includes("-") && localStorage.trainerName !==``) {
@@ -99,15 +91,16 @@ submitBtn.addEventListener("click", function (event) {
   
 })
 
+// initial display for the map
 map.innerHTML = `
 <div class="nes-container is-dark">
 <iframe 
-  width='600' 
-  height='450' 
-  style='border:0' 
-  loading='lazy' 
-  allowfullscreen 
-  src=${gmapUrl}>
+width='600' 
+height='450' 
+style='border:0' 
+loading='lazy' 
+allowfullscreen 
+src=${gmapUrl}>
 </iframe>
 </div>
 `
@@ -115,22 +108,22 @@ map.innerHTML = `
 
 //Navbar
 document.addEventListener('DOMContentLoaded', () => {
-
+  
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
+  
   // Add a click event on each of them
   $navbarBurgers.forEach(el => {
     el.addEventListener('click', () => {
-
+      
       // Get the target from the "data-target" attribute
       const target = el.dataset.target;
       const $target = document.getElementById(target);
-
+      
       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
       el.classList.toggle('is-active');
       $target.classList.toggle('is-active');
-
+      
     });
   });
 
@@ -140,37 +133,71 @@ document.addEventListener('DOMContentLoaded', () => {
 //code to push list of cities in canada to the drop down.
 function cityDisplay() {
   fetch("https://countriesnow.space/api/v0.1/countries")
-    .then(response => response.json())
-    .then(function (result) {
-      result.data[35].cities
-      for (let i = 0; i < result.data[35].cities.length; i++) {
-
-        let cityName = document.createElement(`option`);
-
-        cityName.textContent = result.data[35].cities[i];
-        cityName.setAttribute("value", result.data[35].cities[i])
-        cityList.append(cityName);
-      }
-    }).catch(error => console.log('error', error));
-
-
-  cityList.addEventListener("change", function (event) {
-   
-    console.log(cityList.value);
-    trainerCity = cityList.value;
-    localStorage.trainerCity = cityList.value;
-    map.innerHTML = `
-    <div class="nes-container is-dark">
-    <iframe 
+  .then(response => response.json())
+  .then(function (result) {
+    result.data[35].cities
+    for (let i = 0; i < result.data[35].cities.length; i++) {
+      
+      let cityName = document.createElement(`option`);
+      
+      cityName.textContent = result.data[35].cities[i];
+      cityName.setAttribute("value", result.data[35].cities[i])
+      cityList.append(cityName);
+    }
+    cityList.addEventListener("change", function (event) {
+  
+      trainerCity = cityList.value;
+      localStorage.trainerCity = cityList.value;
+      gmapUrl = `https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
+      map.innerHTML = `
+      <div class="nes-container is-dark">
+      <iframe 
       width='600' 
       height='450' 
       style='border:0' 
       loading='lazy' 
       allowfullscreen src=${gmapUrl}>
-    </div>
-    `
-  })
+      </div>
+      `
+    });
+  }).catch(error => console.log('error', error));
 }
 
+
+function displayMap(event) {
+
+  trainerCity = cityList.value;
+  localStorage.trainerCity = cityList.value;
+  map.innerHTML = `
+  <div class="nes-container is-dark">
+  <iframe 
+  width='600' 
+  height='450' 
+  style='border:0' 
+  loading='lazy' 
+  allowfullscreen src=${gmapUrl}>
+  </div>
+  `
+}
+
+
+//asking the user if they want clinic near them or not
+
+locationEl.addEventListener(`click`,function(event){
+  console.log("locationYes.checked : " + locationYes.checked);
+  if (locationYes.checked) {
+    let citySelect = document.querySelector(`#citySelect`);
+    gmapUrl = `https://www.google.com/maps/embed/v1/search?q=vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
+    cityList.style.visibility = `hidden`;
+    citySelect.style.visibility = `hidden`;
+    displayMap();
+  } else if(locationNo.checked) {
+    gmapUrl = `https://www.google.com/maps/embed/v1/search?q=q=vet%20clinic%20in%20${trainerCity}&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
+    cityList.style.visibility = `visible`;
+    citySelect.style.visibility = `visible`;
+    displayMap();
+  }
+  
+});
 
 cityDisplay();
