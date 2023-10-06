@@ -16,7 +16,7 @@ let locationYes = document.querySelector(`.locationYes`);
 let locationNo = document.querySelector(`.locationNo`);
 
 
-var gmapUrl;
+var gmapUrl = `https://www.google.com/maps/embed/v1/search?q=vet%20clinic%20near%20me&key=AIzaSyBnTYBBIATBd3K783xC4pBTBeUl37I_kX4`;
 
 //asking the user if they want clinic near them or not
 locationEl.addEventListener(`click`,function(event){
