@@ -38,6 +38,8 @@ The user can input their relevant information and be shown vet clinics near them
 - [Project Tracker](https://github.com/users/r-basu/projects/1/views/1)
 - [Issues Tracker](https://github.com/r-basu/nurse-joys-restoration-finder/issues?q=is%3Aissue+is%3Aclosed)
 
+### Release v1.0.0
+
 ## Developers
 
 * [Vinit Patel](https://github.com/vinitp2)
