@@ -11,6 +11,15 @@ let showAppt = document.getElementById(`show-appt`);
 let goHome = document.getElementById(`go-home`);
 let clearAppt = document.getElementById(`clear-appt`);
 
+if (localStorage.pokemonName === undefined) {
+  document.getElementById("trainerForm").style.display = "none";
+  document.getElementById("map").style.display = "none";
+  var errorText = document.createElement(`p`)
+  errorText.innerHTML = "Please select a Pokemon to create a booking!"
+  document.getElementById('errorTex').append(errorText)
+} else {
+  document.getElementById(`errorTex`).style.display = "none";
+}
 // Saved Bookings button visiblity, and button functions
 function visibleApptBtn() {
   if (localStorage.trainerName === undefined) {
@@ -58,13 +67,14 @@ submitBtn.addEventListener("click", function (event) {
 
   let apptText = document.getElementById("appt");
 
-  if (timeSelected.value.includes(":") && dateSelected.value.includes("-")) {
-    apptText.innerHTML = `Your appointment has been Booked on ${localStorage.dateSelected} at ${localStorage.timeSelected}!`
+  if (timeSelected.value.includes(":") && dateSelected.value.includes("-") && localStorage.trainerName !==``) {
+    apptText.innerHTML = `Your appointment has been booked on ${localStorage.dateSelected} at ${localStorage.timeSelected} at your selected clinic!`
+    visibleApptBtn();
   } else {
-    apptText.innerHTML = "Please Select a Date and Time"
+    apptText.innerHTML = "Please input your name and preferred date, time"
   }
 
-  visibleApptBtn();
+  
 })
 
 map.innerHTML = `
